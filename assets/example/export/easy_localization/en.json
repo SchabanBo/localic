@@ -1,0 +1,58 @@
+{
+  "title": "Cool app",
+  "welcome": "welcome",
+  "cart": {
+    "title": "Cart",
+    "bar": {
+      "res_de_not_available_rn": "Restaurant is not available at this time for delivery",
+      "go_to_cart": "Go to cart",
+      "items": "Items",
+      "address_msg": "Please Put Your Address To Make Order"
+    },
+    "in_house": {
+      "reload": "Reload",
+      "pay": "Pay now",
+      "confirm": "Confirm wish",
+      "delete_from_wishlist": "Are you Sure you want to Delete @name @space from your order Wishlist ?",
+      "empty": "Add your favorite food to the wishlist to order",
+      "pay_when_done": "You can pay when all item has been served",
+      "order_name": "Name",
+      "order_number": "Number",
+      "no_order": "You did not ordered anything yet",
+      "order_name_picker": {
+        "new": "Open new order",
+        "random": "Random name"
+      }
+    },
+    "delivery": {
+      "cart_empty": "Add your favorite food to the cart",
+      "status": {
+        "Created": "Created",
+        "Ready": "Ready",
+        "Accepted": "Prepare",
+        "Delivered": "Delivered",
+        "EnRoute": "EnRoute"
+      }
+    },
+    "tip": {
+      "thanks": "Thanks",
+      "add": "Add Tip to waiter",
+      "title": "Tip",
+      "note": "Note for the waiter"
+    }
+  },
+  "common": {
+    "continue": "Continue",
+    "total": "Total",
+    "your_order": "Your order",
+    "delivery_cost": "Delivery Cost",
+    "delivery_time": "Delivery Time"
+  },
+  "drawer": {
+    "main_page": "Main page",
+    "feedback": "Feedback",
+    "local": {
+      "Language": "language"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+name: localic
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.3 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  qlevar_router:
+  flutter_riverpod:
+  hooks_riverpod: ^2.0.0-dev.9
+  shared_preferences: ^2.0.11
+  file_picker: ^4.3.2
+  q_overlay:
+    git: https://github.com/SchabanBo/q_overlay.git
+  dio: ^4.0.6
+  flutter_hooks: ^0.18.4
+    
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/example/localic.json

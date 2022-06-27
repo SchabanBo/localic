@@ -1,0 +1,58 @@
+{
+  "title": "تطبيق رائع",
+  "welcome": "أهلا بك",
+  "cart": {
+    "title": "عربة التسوق",
+    "bar": {
+      "res_de_not_available_rn": "المطعم غير متوفر للتوصيل في هذا الوقت",
+      "go_to_cart": "اذهب إلى عربة التسوق",
+      "items": "العناصر",
+      "address_msg": "يرجى وضع عنوانك لتقديم الطلب"
+    },
+    "in_house": {
+      "reload": "تحديث",
+      "pay": "دفع الحساب",
+      "confirm": "أكد الطلب",
+      "delete_from_wishlist": "هل أنت متأكد أنك تريد حذف@name @space من قائمة رغباتك طلبك؟",
+      "empty": "أضف طعامك المفضل إلى قائمة الرغبات عند الطلب",
+      "pay_when_done": "يمكنك الدفع عندما يتم تقديم كل العناصر",
+      "order_name": "اسم",
+      "order_number": "رقم",
+      "no_order": "أنت لم تطلب أي شيء بعد",
+      "order_name_picker": {
+        "new": "فتح طلب جديد",
+        "random": "اسم عشوائي"
+      }
+    },
+    "delivery": {
+      "cart_empty": "أضف طعامك المفضل إلى عربة التسوق",
+      "status": {
+        "Created": "جديد",
+        "Ready": "جاهز",
+        "Accepted": "تحضير",
+        "Delivered": "تم التوصيل",
+        "EnRoute": "في المسار"
+      }
+    },
+    "tip": {
+      "thanks": "شكرًا",
+      "add": "أضف بقشيش للنادل",
+      "title": "بقشيش",
+      "note": "ملاحظة للنادل"
+    }
+  },
+  "common": {
+    "continue": "متابعة",
+    "total": "المجموع",
+    "your_order": "طلبك",
+    "delivery_cost": "تكلفة التوصيل",
+    "delivery_time": "موعد التسليم"
+  },
+  "drawer": {
+    "main_page": "الصفحة الرئيسية",
+    "feedback": "رايك بنا",
+    "local": {
+      "Language": "اللغة"
+    }
+  }
+}

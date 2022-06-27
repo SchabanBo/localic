@@ -1,0 +1,176 @@
+{
+  "en": {
+    "title": "Cool app",
+    "welcome": "welcome",
+    "cart": {
+      "title": "Cart",
+      "bar": {
+        "res_de_not_available_rn": "Restaurant is not available at this time for delivery",
+        "go_to_cart": "Go to cart",
+        "items": "Items",
+        "address_msg": "Please Put Your Address To Make Order"
+      },
+      "in_house": {
+        "reload": "Reload",
+        "pay": "Pay now",
+        "confirm": "Confirm wish",
+        "delete_from_wishlist": "Are you Sure you want to Delete @name @space from your order Wishlist ?",
+        "empty": "Add your favorite food to the wishlist to order",
+        "pay_when_done": "You can pay when all item has been served",
+        "order_name": "Name",
+        "order_number": "Number",
+        "no_order": "You did not ordered anything yet",
+        "order_name_picker": {
+          "new": "Open new order",
+          "random": "Random name"
+        }
+      },
+      "delivery": {
+        "cart_empty": "Add your favorite food to the cart",
+        "status": {
+          "Created": "Created",
+          "Ready": "Ready",
+          "Accepted": "Prepare",
+          "Delivered": "Delivered",
+          "EnRoute": "EnRoute"
+        }
+      },
+      "tip": {
+        "thanks": "Thanks",
+        "add": "Add Tip to waiter",
+        "title": "Tip",
+        "note": "Note for the waiter"
+      }
+    },
+    "common": {
+      "continue": "Continue",
+      "total": "Total",
+      "your_order": "Your order",
+      "delivery_cost": "Delivery Cost",
+      "delivery_time": "Delivery Time"
+    },
+    "drawer": {
+      "main_page": "Main page",
+      "feedback": "Feedback",
+      "local": {
+        "Language": "language"
+      }
+    }
+  },
+  "de": {
+    "title": "Coole Anwendung",
+    "welcome": "willkommen",
+    "cart": {
+      "title": "Wagen",
+      "bar": {
+        "res_de_not_available_rn": "Das Restaurant ist derzeit nicht für die Lieferung verfügbar",
+        "go_to_cart": "Zum Einkaufskorb gehen",
+        "items": "Artikel",
+        "address_msg": "Bitte geben Sie Ihre Adresse an, um eine Bestellung aufzugeben"
+      },
+      "in_house": {
+        "reload": "Neu laden",
+        "pay": "Bezahlen",
+        "confirm": "Wunsch bestätigen",
+        "delete_from_wishlist": "Sind Sie sicher, dass Sie @name @space aus Ihrer Wunschliste löschen möchten?",
+        "empty": "Fügen Sie Ihr Lieblingsessen der Wunschliste hinzu, um es zu bestellen",
+        "pay_when_done": "Sie können bezahlen, wenn alle Artikel serviert wurden",
+        "order_name": "Name",
+        "order_number": "Nummer",
+        "no_order": "Sie haben noch nichts bestellt",
+        "order_name_picker": {
+          "new": "Neue Bestellung öffnen",
+          "random": "Zufälliger Name"
+        }
+      },
+      "delivery": {
+        "cart_empty": "Fügen Sie Ihr Lieblingsessen dem Warenkorb hinzu",
+        "status": {
+          "Created": "Erstellt",
+          "Ready": "Bereit",
+          "Accepted": "Vorbereiten",
+          "Delivered": "Geliefert",
+          "EnRoute": "Unterwegs"
+        }
+      },
+      "tip": {
+        "thanks": "Vielen Dank",
+        "add": "Gib dem Kellner Trinkgeld",
+        "title": "Trinkgeld",
+        "note": "Hinweis für den Kellner"
+      }
+    },
+    "common": {
+      "continue": "Fortsetzten",
+      "total": "Total",
+      "your_order": "Deine Bestellung",
+      "delivery_cost": "Versandkosten",
+      "delivery_time": "Lieferzeit"
+    },
+    "drawer": {
+      "main_page": "Hauptseite",
+      "feedback": "Feedback",
+      "local": {
+        "Language": "Sprache"
+      }
+    }
+  },
+  "ar": {
+    "title": "تطبيق رائع",
+    "welcome": "أهلا بك",
+    "cart": {
+      "title": "عربة التسوق",
+      "bar": {
+        "res_de_not_available_rn": "المطعم غير متوفر للتوصيل في هذا الوقت",
+        "go_to_cart": "اذهب إلى عربة التسوق",
+        "items": "العناصر",
+        "address_msg": "يرجى وضع عنوانك لتقديم الطلب"
+      },
+      "in_house": {
+        "reload": "تحديث",
+        "pay": "دفع الحساب",
+        "confirm": "أكد الطلب",
+        "delete_from_wishlist": "هل أنت متأكد أنك تريد حذف@name @space من قائمة رغباتك طلبك؟",
+        "empty": "أضف طعامك المفضل إلى قائمة الرغبات عند الطلب",
+        "pay_when_done": "يمكنك الدفع عندما يتم تقديم كل العناصر",
+        "order_name": "اسم",
+        "order_number": "رقم",
+        "no_order": "أنت لم تطلب أي شيء بعد",
+        "order_name_picker": {
+          "new": "فتح طلب جديد",
+          "random": "اسم عشوائي"
+        }
+      },
+      "delivery": {
+        "cart_empty": "أضف طعامك المفضل إلى عربة التسوق",
+        "status": {
+          "Created": "جديد",
+          "Ready": "جاهز",
+          "Accepted": "تحضير",
+          "Delivered": "تم التوصيل",
+          "EnRoute": "في المسار"
+        }
+      },
+      "tip": {
+        "thanks": "شكرًا",
+        "add": "أضف بقشيش للنادل",
+        "title": "بقشيش",
+        "note": "ملاحظة للنادل"
+      }
+    },
+    "common": {
+      "continue": "متابعة",
+      "total": "المجموع",
+      "your_order": "طلبك",
+      "delivery_cost": "تكلفة التوصيل",
+      "delivery_time": "موعد التسليم"
+    },
+    "drawer": {
+      "main_page": "الصفحة الرئيسية",
+      "feedback": "رايك بنا",
+      "local": {
+        "Language": "اللغة"
+      }
+    }
+  }
+}

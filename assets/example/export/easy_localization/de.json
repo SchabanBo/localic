@@ -1,0 +1,58 @@
+{
+  "title": "Coole Anwendung",
+  "welcome": "willkommen",
+  "cart": {
+    "title": "Wagen",
+    "bar": {
+      "res_de_not_available_rn": "Das Restaurant ist derzeit nicht für die Lieferung verfügbar",
+      "go_to_cart": "Zum Einkaufskorb gehen",
+      "items": "Artikel",
+      "address_msg": "Bitte geben Sie Ihre Adresse an, um eine Bestellung aufzugeben"
+    },
+    "in_house": {
+      "reload": "Neu laden",
+      "pay": "Bezahlen",
+      "confirm": "Wunsch bestätigen",
+      "delete_from_wishlist": "Sind Sie sicher, dass Sie @name @space aus Ihrer Wunschliste löschen möchten?",
+      "empty": "Fügen Sie Ihr Lieblingsessen der Wunschliste hinzu, um es zu bestellen",
+      "pay_when_done": "Sie können bezahlen, wenn alle Artikel serviert wurden",
+      "order_name": "Name",
+      "order_number": "Nummer",
+      "no_order": "Sie haben noch nichts bestellt",
+      "order_name_picker": {
+        "new": "Neue Bestellung öffnen",
+        "random": "Zufälliger Name"
+      }
+    },
+    "delivery": {
+      "cart_empty": "Fügen Sie Ihr Lieblingsessen dem Warenkorb hinzu",
+      "status": {
+        "Created": "Erstellt",
+        "Ready": "Bereit",
+        "Accepted": "Vorbereiten",
+        "Delivered": "Geliefert",
+        "EnRoute": "Unterwegs"
+      }
+    },
+    "tip": {
+      "thanks": "Vielen Dank",
+      "add": "Gib dem Kellner Trinkgeld",
+      "title": "Trinkgeld",
+      "note": "Hinweis für den Kellner"
+    }
+  },
+  "common": {
+    "continue": "Fortsetzten",
+    "total": "Total",
+    "your_order": "Deine Bestellung",
+    "delivery_cost": "Versandkosten",
+    "delivery_time": "Lieferzeit"
+  },
+  "drawer": {
+    "main_page": "Hauptseite",
+    "feedback": "Feedback",
+    "local": {
+      "Language": "Sprache"
+    }
+  }
+}
