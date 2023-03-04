@@ -13,6 +13,17 @@ class SettingsIcon extends ConsumerWidget {
     return IconButton(
       onPressed: () => QPanel(
         child: const SettingsView(),
+        margin: const EdgeInsets.all(8),
+        backgroundDecoration: BoxDecoration(
+          color: Colors.black,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.amber.withOpacity(.1),
+              blurRadius: 10,
+              spreadRadius: 10,
+            ),
+          ],
+        ),
         alignment: Alignment.centerRight,
       ).show(),
       icon: const Icon(Icons.settings, color: AppColors.icon),

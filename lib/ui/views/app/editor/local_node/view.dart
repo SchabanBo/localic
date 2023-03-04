@@ -72,6 +72,7 @@ class _DraggableLocalNode extends ConsumerWidget {
     final dragRequest = NodeDragRequest(viewModel.node, viewModel.indexMap);
     final child = _NodeContainer(
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(width: 8),
           Draggable<NodeDragRequest>(

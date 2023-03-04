@@ -11,6 +11,7 @@ import '../../../../widgets/error_notification.dart';
 import '../../view_model.dart';
 import '../view_model.dart';
 import 'view.dart';
+import 'view_model.dart';
 
 class OptionsWidget extends ConsumerWidget {
   final LocalItemVM vm;
@@ -50,45 +51,52 @@ class OptionsWidget extends ConsumerWidget {
         ),
         const SizedBox(width: 5),
         InkWell(
-            child: const Tooltip(
-                message: 'Delete',
-                child: Icon(
-                  Icons.delete_outline,
-                  color: AppColors.icon,
-                )),
-            onTap: () => QDialog(
-                    child: SizedBox(
-                  width: 250,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                            'Are you sure you want to delete ${vmValue.item.name}?'),
-                        const SizedBox(height: 8),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Spacer(),
-                            TextButton(
-                                onPressed: QOverlay.dismissLast,
-                                child: const Text('No')),
-                            const SizedBox(width: 8),
-                            TextButton(
-                                onPressed: () {
-                                  vmValue.editorVM.removeItem(vmValue.indexMap);
-                                  QOverlay.dismissLast();
-                                },
-                                child: const Text('Yes')),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                )).show()),
+          child: const Tooltip(
+              message: 'Delete',
+              child: Icon(
+                Icons.delete_outline,
+                color: AppColors.icon,
+              )),
+          onTap: () => _deleteDialog(vmValue).show(),
+        ),
       ],
+    );
+  }
+
+  QDialog _deleteDialog(LocalItemViewModel vmValue) {
+    return QDialog(
+      child: SizedBox(
+        width: 250,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('Are you sure you want to delete ${vmValue.item.name}?'),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Spacer(),
+                  TextButton(
+                    onPressed: QOverlay.dismissLast,
+                    child: const Text('No'),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    onPressed: () {
+                      vmValue.editorVM.removeItem(vmValue.indexMap);
+                      QOverlay.dismissLast();
+                    },
+                    child: const Text('Yes'),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 
