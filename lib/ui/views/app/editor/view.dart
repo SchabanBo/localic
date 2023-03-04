@@ -27,6 +27,7 @@ class _Editor extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(editorVMProvider);
     final records = ref.watch(localesRecordsProvider);
     final controller = useScrollController();
     return Column(

@@ -9,11 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  qlevar_router:
-  flutter_riverpod:
-  hooks_riverpod: ^2.0.0-dev.9
+  qlevar_router: ^1.8.0
+  flutter_riverpod: ^2.0.0
+  hooks_riverpod: ^2.0.0
   shared_preferences: ^2.0.11
-  file_picker: ^4.3.2
+  file_picker: ^5.2.5
   q_overlay:
     git: https://github.com/SchabanBo/q_overlay.git
   dio: ^4.0.6

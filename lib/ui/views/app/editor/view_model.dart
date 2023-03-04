@@ -9,10 +9,8 @@ import '../view_model.dart';
 
 final localesLoaderProvider =
     FutureProvider.autoDispose<QlevarLocal>((ref) async {
-  ref.read(workingProvider.notifier).state = 'Loading locales...';
   final app = ref.read(appVMProvider).app;
   final locales = await ref.read(storageServiceProvider).loadLocals(app);
-  ref.read(workingProvider.notifier).state = '';
   return locales ?? QlevarLocal();
 });
 

@@ -24,7 +24,7 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    QR.settings.iniPage = const WelcomeAnimation();
+    QR.settings.initPage = const WelcomeAnimation();
     final router = QRouterDelegate(
       AppRoutes(ref).routes,
       initPath: '/welcome',
@@ -35,16 +35,26 @@ class App extends ConsumerWidget {
       routerDelegate: router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        backgroundColor: Colors.black,
         canvasColor: Colors.black,
         cardColor: const Color(0xFF161616),
-        colorScheme:
-            ColorScheme.fromSwatch(brightness: Brightness.dark).copyWith(
-          secondary: const Color(0xffB7B327),
-          primary: Colors.amber,
-        ),
-        toggleableActiveColor: Colors.amber,
         dividerColor: Colors.white,
+        colorScheme: ColorScheme.fromSwatch(brightness: Brightness.dark)
+            .copyWith(secondary: const Color(0xffB7B327), primary: Colors.amber)
+            .copyWith(background: Colors.black),
+        switchTheme: SwitchThemeData(
+          thumbColor: MaterialStateProperty.resolveWith<Color?>((states) =>
+              states.contains(MaterialState.selected) ? Colors.amber : null),
+          trackColor: MaterialStateProperty.resolveWith<Color?>((states) =>
+              states.contains(MaterialState.selected) ? Colors.amber : null),
+        ),
+        radioTheme: RadioThemeData(
+          fillColor: MaterialStateProperty.resolveWith<Color?>((states) =>
+              states.contains(MaterialState.selected) ? Colors.amber : null),
+        ),
+        checkboxTheme: CheckboxThemeData(
+          fillColor: MaterialStateProperty.resolveWith<Color?>((states) =>
+              states.contains(MaterialState.selected) ? Colors.amber : null),
+        ),
       ),
     );
   }
