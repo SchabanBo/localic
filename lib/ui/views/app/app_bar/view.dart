@@ -4,15 +4,15 @@ import 'actions/view.dart';
 import 'leading.dart';
 import 'title.dart';
 
-class AppBarView extends StatelessWidget with PreferredSizeWidget {
+class AppBarView extends StatelessWidget implements PreferredSizeWidget {
   const AppBarView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: const Color(0xFF010101),
-      child: Row(
-        children: const [
+      child: const Row(
+        children: [
           Expanded(child: AppBarLeading()),
           Expanded(child: TitleWidget()),
           Expanded(child: AppBarActions()),

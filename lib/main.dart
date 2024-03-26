@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:q_overlay/q_overlay.dart';
 import 'package:qlevar_router/qlevar_router.dart';
 
-import 'global/provider_observer.dart';
 import 'global/routers/app_routes.dart';
 import 'global/routers/qlevar_page_type.dart';
 import 'ui/views/welcome/welcome_animation.dart';
@@ -12,15 +11,15 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   QR.settings.pagesType = QlevarPageType().type;
   runApp(
-    ProviderScope(
-      observers: [ProviderLogger()],
-      child: const App(),
+    const ProviderScope(
+      //  observers: [ProviderLogger()],
+      child: App(),
     ),
   );
 }
 
 class App extends ConsumerWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 
 import '../../../models/local_data/local.dart';
 import '../../../ui/widgets/error_notification.dart';
+import '../logging_service.dart';
 
 class GoogleTranslatorService {
   final String apiKey;
@@ -17,7 +18,8 @@ class GoogleTranslatorService {
         }
         item.values[key] = await getTranslation(item.values[from]!, from, key);
       }
-    } on Exception catch (e) {
+    } catch (e, s) {
+      logger.e('Error Translating $e', error: e, stackTrace: s);
       showNotification('Error Translating', e.toString());
     }
     return item;
