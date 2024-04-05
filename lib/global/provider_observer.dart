@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'services/logging_service.dart';
+
 class ProviderLogger extends ProviderObserver {
   @override
   void didUpdateProvider(
@@ -8,7 +10,7 @@ class ProviderLogger extends ProviderObserver {
     Object? newValue,
     ProviderContainer container,
   ) {
-    print(
+    logger.d(
         '${provider.name ?? provider.runtimeType}: $previousValue -> $newValue');
   }
 
@@ -17,7 +19,7 @@ class ProviderLogger extends ProviderObserver {
     ProviderBase provider,
     ProviderContainer container,
   ) {
-    print('${provider.name ?? provider.runtimeType}: disposed');
+    logger.d('${provider.name ?? provider.runtimeType}: disposed');
   }
 
   @override
@@ -26,6 +28,7 @@ class ProviderLogger extends ProviderObserver {
     Object? value,
     ProviderContainer container,
   ) {
-    print('${provider.name ?? provider.runtimeType}: added with value $value');
+    logger
+        .d('${provider.name ?? provider.runtimeType}: added with value $value');
   }
 }
