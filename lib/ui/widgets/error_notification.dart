@@ -17,14 +17,14 @@ class _Notification extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
         color: type == NotificationType.error
-            ? context.theme.errorColor
+            ? context.theme.colorScheme.error
             : Colors.green.withOpacity(0.5),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(
         children: [
-          Text(title, style: Theme.of(context).textTheme.headline6),
-          Text(message, style: Theme.of(context).textTheme.bodyText1),
+          Text(title, style: Theme.of(context).textTheme.titleLarge),
+          Text(message, style: Theme.of(context).textTheme.bodyLarge),
         ],
       ),
     );

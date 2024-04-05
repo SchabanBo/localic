@@ -20,13 +20,12 @@ class EditorHeaderWidget extends ConsumerWidget {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Colors.black,
-            AppColors.node,
+            AppColors.background,
+            AppColors.border,
           ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
-        border: Border(bottom: BorderSide(color: Colors.white60, width: 1)),
       ),
       child: Row(
         children: [

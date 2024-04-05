@@ -36,7 +36,7 @@ class LocalItemViewModel extends ChangeNotifier {
     }
   }
 
-  void handleDrag(DragRequest request) {
-    editorVM.handleDrag(request, indexMap, item.hashCode);
+  void handleDrag(DragTargetDetails<DragRequest> request) {
+    editorVM.handleDrag(request.data, indexMap, item.hashCode);
   }
 }

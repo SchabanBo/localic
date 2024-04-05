@@ -6,6 +6,7 @@ import 'package:qlevar_router/qlevar_router.dart';
 import 'global/provider_observer.dart';
 import 'global/routers/app_routes.dart';
 import 'global/routers/qlevar_page_type.dart';
+import 'helpers/constants.dart';
 import 'ui/views/welcome/welcome_animation.dart';
 
 Future<void> main() async {
@@ -35,8 +36,8 @@ class App extends ConsumerWidget {
       routerDelegate: router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        canvasColor: Colors.black,
-        cardColor: const Color(0xFF161616),
+        canvasColor: AppColors.background,
+        cardColor: AppColors.node,
         dividerColor: Colors.white,
         colorScheme: ColorScheme.fromSwatch(brightness: Brightness.dark)
             .copyWith(secondary: const Color(0xffB7B327), primary: Colors.amber)

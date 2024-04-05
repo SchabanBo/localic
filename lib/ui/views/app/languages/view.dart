@@ -69,17 +69,14 @@ class _LanguageList extends ConsumerWidget {
                     child: const Icon(Icons.arrow_upward),
                     onTap: () => vm.moveLanguage(language, -1),
                   ),
-                  const SizedBox(width: 8),
                   InkWell(
                     child: const Icon(Icons.arrow_downward),
                     onTap: () => vm.moveLanguage(language, 1),
                   ),
-                  const SizedBox(width: 8),
                   InkWell(
                     child: const Icon(Icons.edit, color: Colors.amber),
                     onTap: () => _editLanguage(vm, language),
                   ),
-                  const SizedBox(width: 8),
                   InkWell(
                     child: const Icon(Icons.delete, color: Colors.red),
                     onTap: () => _removeLanguage(context, vm, language),

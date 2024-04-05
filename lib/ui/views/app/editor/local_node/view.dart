@@ -82,19 +82,19 @@ class _DraggableLocalNode extends ConsumerWidget {
                 const Icon(Icons.drag_handle, color: AppColors.primary),
             child: const Icon(Icons.drag_handle, color: AppColors.icon),
           ),
-          const SizedBox(width: 8),
+          const SizedBox(width: 16),
           Expanded(child: _LocalNodeWidget(vm: vm)),
         ],
       ),
     );
 
     return DragTarget<DragRequest>(
-      onWillAccept: (data) {
-        return data != null &&
-            data != dragRequest &&
+      onAcceptWithDetails: viewModel.handleDrag,
+      onWillAcceptWithDetails: (details) {
+        final data = details.data;
+        return data != dragRequest &&
             _notSameParent(List.of(data.hashMap), viewModel.indexMap);
       },
-      onAccept: viewModel.handleDrag,
       builder: (c, data, _) {
         if (data.isEmpty) return child;
 
