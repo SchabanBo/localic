@@ -15,7 +15,7 @@ import 'view_model.dart';
 
 class OptionsWidget extends ConsumerWidget {
   final LocalItemVM vm;
-  const OptionsWidget({required this.vm, Key? key}) : super(key: key);
+  const OptionsWidget({required this.vm, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -115,12 +115,10 @@ class OptionsWidget extends ConsumerWidget {
                 fontSize: 24,
               ),
             ),
-            ...languages
-                .map((e) => TextButton(
-                      onPressed: () => QOverlay.dismissLast(result: e),
-                      child: Text(e),
-                    ))
-                .toList()
+            ...languages.map((e) => TextButton(
+                  onPressed: () => QOverlay.dismissLast(result: e),
+                  child: Text(e),
+                ))
           ],
         ),
       ),

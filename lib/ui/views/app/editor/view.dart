@@ -9,7 +9,7 @@ import 'local_node/view.dart';
 import 'view_model.dart';
 
 class EditorView extends ConsumerWidget {
-  const EditorView({Key? key}) : super(key: key);
+  const EditorView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,7 +23,7 @@ class EditorView extends ConsumerWidget {
 }
 
 class _Editor extends HookConsumerWidget {
-  const _Editor({Key? key}) : super(key: key);
+  const _Editor();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

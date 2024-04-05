@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 
+import '../../../helpers/extensions/string_extension.dart';
 import '../../../models/local_data/local.dart';
 import '../../../ui/widgets/error_notification.dart';
 import '../logging_service.dart';
@@ -16,7 +17,9 @@ class GoogleTranslatorService {
         if (key == from || item.values.values.elementAt(i).isNotEmpty) {
           continue;
         }
-        item.values[key] = await getTranslation(item.values[from]!, from, key);
+        final valueFrom = item.values[from];
+        if (valueFrom.isNullOrEmpty) continue;
+        item.values[key] = await getTranslation(valueFrom!, from, key);
       }
     } catch (e, s) {
       logger.e('Error Translating $e', error: e, stackTrace: s);
@@ -26,6 +29,7 @@ class GoogleTranslatorService {
   }
 
   Future<String> getTranslation(String value, String from, String to) async {
+    logger.d('Translating $value from $from to $to');
     final request = await _dio.get(
         'https://translation.googleapis.com/language/translate/v2',
         queryParameters: {
