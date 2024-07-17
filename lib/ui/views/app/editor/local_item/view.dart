@@ -59,8 +59,8 @@ class _DraggableLocalItem extends ConsumerWidget {
       ),
     );
     return DragTarget<DragRequest>(
-      onWillAccept: (data) => data is DragRequest && data != dragRequest,
-      onAccept: viewModel.handleDrag,
+      onWillAcceptWithDetails: (details) => details.data != dragRequest,
+      onAcceptWithDetails: viewModel.handleDrag,
       builder: (c, data, _) {
         if (data.isEmpty) return child;
 

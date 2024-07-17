@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../helpers/extensions/context_extensions.dart';
+import '../../../../helpers/constants.dart';
 import '../view_model.dart';
 
 class TitleWidget extends StatelessWidget {
@@ -14,7 +14,7 @@ class TitleWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 28),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
-        color: context.theme.cardColor,
+        color: AppColors.node,
       ),
       child: const _Title(),
     );
@@ -33,7 +33,7 @@ class _Title extends ConsumerWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20, color: AppColors.primary),
         ),
         working.isEmpty
             ? const SizedBox(height: 1)

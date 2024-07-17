@@ -15,6 +15,17 @@ class LanguageIcon extends StatelessWidget {
         await QPanel(
           name: 'SettingsScreen',
           child: const LanguageView(),
+          margin: const EdgeInsets.all(4),
+          backgroundDecoration: const BoxDecoration(
+            color: AppColors.background,
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.node,
+                blurRadius: 10,
+                spreadRadius: 10,
+              ),
+            ],
+          ),
           alignment: Alignment.centerRight,
         ).show();
       },

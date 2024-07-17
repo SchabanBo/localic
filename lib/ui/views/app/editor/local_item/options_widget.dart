@@ -11,10 +11,11 @@ import '../../../../widgets/error_notification.dart';
 import '../../view_model.dart';
 import '../view_model.dart';
 import 'view.dart';
+import 'view_model.dart';
 
 class OptionsWidget extends ConsumerWidget {
   final LocalItemVM vm;
-  const OptionsWidget({required this.vm, Key? key}) : super(key: key);
+  const OptionsWidget({required this.vm, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -50,51 +51,59 @@ class OptionsWidget extends ConsumerWidget {
         ),
         const SizedBox(width: 5),
         InkWell(
-            child: const Tooltip(
-                message: 'Delete',
-                child: Icon(
-                  Icons.delete_outline,
-                  color: AppColors.icon,
-                )),
-            onTap: () => QDialog(
-                    child: SizedBox(
-                  width: 250,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                            'Are you sure you want to delete ${vmValue.item.name}?'),
-                        const SizedBox(height: 8),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Spacer(),
-                            TextButton(
-                                onPressed: QOverlay.dismissLast,
-                                child: const Text('No')),
-                            const SizedBox(width: 8),
-                            TextButton(
-                                onPressed: () {
-                                  vmValue.editorVM.removeItem(vmValue.indexMap);
-                                  QOverlay.dismissLast();
-                                },
-                                child: const Text('Yes')),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                )).show()),
+          child: const Tooltip(
+              message: 'Delete',
+              child: Icon(
+                Icons.delete_outline,
+                color: AppColors.icon,
+              )),
+          onTap: () => _deleteDialog(vmValue).show(),
+        ),
       ],
+    );
+  }
+
+  QDialog _deleteDialog(LocalItemViewModel vmValue) {
+    return QDialog(
+      child: SizedBox(
+        width: 250,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('Are you sure you want to delete ${vmValue.item.name}?'),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Spacer(),
+                  TextButton(
+                    onPressed: QOverlay.dismissLast,
+                    child: const Text('No'),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    onPressed: () {
+                      vmValue.editorVM.removeItem(vmValue.indexMap);
+                      QOverlay.dismissLast();
+                    },
+                    child: const Text('Yes'),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 
   void translate(WidgetRef ref) async {
     ref.read(workingProvider.notifier).state = 'Translating...';
     final languages = ref.read(editorVMProvider).locales.languages;
+    var overwrite = true;
     final lan = await QDialog(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -107,12 +116,19 @@ class OptionsWidget extends ConsumerWidget {
                 fontSize: 24,
               ),
             ),
-            ...languages
-                .map((e) => TextButton(
-                      onPressed: () => QOverlay.dismissLast(result: e),
-                      child: Text(e),
-                    ))
-                .toList()
+            ...languages.map(
+              (e) => TextButton(
+                onPressed: () => QOverlay.dismissLast(result: e),
+                child: Text(e),
+              ),
+            ),
+            const Text('Overwrite :'),
+            Checkbox(
+              value: overwrite,
+              onChanged: (value) {
+                overwrite = value!;
+              },
+            ),
           ],
         ),
       ),
@@ -131,7 +147,7 @@ class OptionsWidget extends ConsumerWidget {
       return;
     }
     final service = GoogleTranslatorService(settings.googleApi);
-    await service.translate(ref.read(vm).item, lan);
+    await service.translate(ref.read(vm).item, lan, overwrite: overwrite);
     ref.read(editorVMProvider).refresh();
     ref.read(workingProvider.notifier).state = '';
   }
@@ -145,7 +161,7 @@ class OptionsWidget extends ConsumerWidget {
       node = node.children
           .whereType<LocalNode>()
           .firstWhere((e) => e.hashCode == indexMap[i]);
-      result += '${node.name}_';
+      result += '${node.name}.';
     }
     final item = node.children.firstWhere((e) => e.hashCode == indexMap.last);
     result += item.name;

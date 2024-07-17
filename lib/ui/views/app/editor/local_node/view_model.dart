@@ -39,7 +39,7 @@ class LocalNodeViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void handleDrag(DragRequest request) {
-    editorVM.handleDrag(request, indexMap, node.hashCode);
+  void handleDrag(DragTargetDetails<DragRequest> request) {
+    editorVM.handleDrag(request.data, indexMap, node.hashCode);
   }
 }

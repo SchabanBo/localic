@@ -4,7 +4,7 @@ import 'app_bar/view.dart';
 import 'editor/view.dart';
 
 class AppView extends StatelessWidget {
-  const AppView({Key? key}) : super(key: key);
+  const AppView({super.key});
 
   @override
   Widget build(BuildContext context) {
