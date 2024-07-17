@@ -10,13 +10,13 @@ class GoogleTranslatorService {
   final Dio _dio = Dio();
   GoogleTranslatorService(this.apiKey);
 
-  Future<LocalItem> translate(LocalItem item, String from) async {
+  Future<LocalItem> translate(LocalItem item, String from,
+      {bool overwrite = false}) async {
     try {
       for (var i = 0; i < item.values.length; i++) {
         final key = item.values.keys.elementAt(i);
-        if (key == from || item.values.values.elementAt(i).isNotEmpty) {
-          continue;
-        }
+        if (key == from) continue;
+        if (item.values.values.elementAt(i).isNotEmpty && !overwrite) continue;
         final valueFrom = item.values[from];
         if (valueFrom.isNullOrEmpty) continue;
         item.values[key] = await getTranslation(valueFrom!, from, key);

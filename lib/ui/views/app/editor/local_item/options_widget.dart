@@ -103,6 +103,7 @@ class OptionsWidget extends ConsumerWidget {
   void translate(WidgetRef ref) async {
     ref.read(workingProvider.notifier).state = 'Translating...';
     final languages = ref.read(editorVMProvider).locales.languages;
+    var overwrite = true;
     final lan = await QDialog(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -115,10 +116,19 @@ class OptionsWidget extends ConsumerWidget {
                 fontSize: 24,
               ),
             ),
-            ...languages.map((e) => TextButton(
-                  onPressed: () => QOverlay.dismissLast(result: e),
-                  child: Text(e),
-                ))
+            ...languages.map(
+              (e) => TextButton(
+                onPressed: () => QOverlay.dismissLast(result: e),
+                child: Text(e),
+              ),
+            ),
+            const Text('Overwrite :'),
+            Checkbox(
+              value: overwrite,
+              onChanged: (value) {
+                overwrite = value!;
+              },
+            ),
           ],
         ),
       ),
@@ -137,7 +147,7 @@ class OptionsWidget extends ConsumerWidget {
       return;
     }
     final service = GoogleTranslatorService(settings.googleApi);
-    await service.translate(ref.read(vm).item, lan);
+    await service.translate(ref.read(vm).item, lan, overwrite: overwrite);
     ref.read(editorVMProvider).refresh();
     ref.read(workingProvider.notifier).state = '';
   }
@@ -151,7 +161,7 @@ class OptionsWidget extends ConsumerWidget {
       node = node.children
           .whereType<LocalNode>()
           .firstWhere((e) => e.hashCode == indexMap[i]);
-      result += '${node.name}_';
+      result += '${node.name}.';
     }
     final item = node.children.firstWhere((e) => e.hashCode == indexMap.last);
     result += item.name;
